@@ -8,12 +8,31 @@
 </head>
 
 <body>
-    
+    <input id="value" type="text">
+
+    <button id="calBtn" type="button">Calculate</button>
 
     <script>
-        let num=2+2-2;
+        let num = document.getElementById("value");
 
-        console.log(eval(num))
+        // let num = 2 + 2 - 2;
+        let calBtn = document.getElementById("calBtn");
+        calBtn.addEventListener("click", () => {
+            console.log(num.value)
+            console.log(eval(num.value))
+            let calculate = eval(num.value);
+            num.value = calculate;
+            num.focus();
+        })
+
+        function handleEvent(event) {
+            if (event.key === 'Enter' || event.keyCode === 13) {
+                calBtn.click()
+            }
+        }
+
+        document.addEventListener("keydown",handleEvent)
+
     </script>
 </body>
 
