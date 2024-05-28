@@ -8,22 +8,58 @@
 </head>
 
 <body>
-    <input id="value" type="text">
+    <input id="display" type="text" readonly>
+    <!-- <textarea name="display" id="display"></textarea> -->
 
-    <button id="calBtn" type="button">Calculate</button>
+    <button id="calBtn" type="button">=</button>
+    <input class="numericKeys" onclick="displayInput(1)" type="button" value="1">
+    <input class="numericKeys" onclick="displayInput(2)" type="button" value="2">
+    <input class="numericKeys" onclick="displayInput(3)" type="button" value="3">
+    <input class="numericKeys" onclick="displayInput(4)" type="button" value="4">
+    <input class="numericKeys" onclick="displayInput(5)" type="button" value="5">
+    <input class="numericKeys" onclick="displayInput(6)" type="button" value="6">
+    <input class="numericKeys" onclick="displayInput(7)" type="button" value="7">
+    <input class="numericKeys" onclick="displayInput(8)" type="button" value="8">
+    <input class="numericKeys" onclick="displayInput(9)" type="button" value="9">
+    <input class="numericKeys" onclick="displayInput(0)" type="button" value="0">
+    <input class="operators" onclick="displayInput('+')" type="button" value="+">
+    <input class="operators" onclick="displayInput('-')" type="button" value="-">
+    <input class="operators" onclick="displayInput('*')" type="button" value="*">
+    <input class="operators" onclick="displayInput('/')" type="button" value="/">
+    <input class="allClear" onclick="allClear()" type="button" value="AC">
 
     <script>
-        let num = document.getElementById("value");
-
+        let display = document.getElementById("display");
+        // let btn=document.querySelectorAll(".numericKeys")
+        // console.log(btn)
         // let num = 2 + 2 - 2;
         let calBtn = document.getElementById("calBtn");
         calBtn.addEventListener("click", () => {
-            console.log(num.value)
-            console.log(eval(num.value))
-            let calculate = eval(num.value);
-            num.value = calculate;
-            num.focus();
+            console.log(display.value)
+            console.log(eval(display.value))
+            let calculate = eval(display.value);
+            display.value = calculate;
+            display.focus();
         })
+
+        let displayInput=(input)=>{
+            console.log(input)
+            display.value+=input;
+            display.focus();
+        }
+
+        let allClear=()=>{
+            display.value='';
+        }
+
+        // for (const value of btn) {
+        //     // console.log(value)
+        //     // value.setAttribute("onclick",displayInput(value.value))
+        //     value.addEventListener("click",()=> displayInput(value.value))
+        //     // console.log(value)
+        // }
+
+        
 
         function handleEvent(event) {
             if (event.key === 'Enter' || event.keyCode === 13) {
