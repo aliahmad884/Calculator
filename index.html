@@ -5,71 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <input id="display" type="text" readonly>
-    <!-- <textarea name="display" id="display"></textarea> -->
 
-    <button id="calBtn" type="button">=</button>
-    <input class="numericKeys" onclick="displayInput(1)" type="button" value="1">
-    <input class="numericKeys" onclick="displayInput(2)" type="button" value="2">
-    <input class="numericKeys" onclick="displayInput(3)" type="button" value="3">
-    <input class="numericKeys" onclick="displayInput(4)" type="button" value="4">
-    <input class="numericKeys" onclick="displayInput(5)" type="button" value="5">
-    <input class="numericKeys" onclick="displayInput(6)" type="button" value="6">
-    <input class="numericKeys" onclick="displayInput(7)" type="button" value="7">
-    <input class="numericKeys" onclick="displayInput(8)" type="button" value="8">
-    <input class="numericKeys" onclick="displayInput(9)" type="button" value="9">
-    <input class="numericKeys" onclick="displayInput(0)" type="button" value="0">
-    <input class="operators" onclick="displayInput('+')" type="button" value="+">
-    <input class="operators" onclick="displayInput('-')" type="button" value="-">
-    <input class="operators" onclick="displayInput('*')" type="button" value="*">
-    <input class="operators" onclick="displayInput('/')" type="button" value="/">
-    <input class="allClear" onclick="allClear()" type="button" value="AC">
+    <div class="mainContainer">
 
-    <script>
-        let display = document.getElementById("display");
-        // let btn=document.querySelectorAll(".numericKeys")
-        // console.log(btn)
-        // let num = 2 + 2 - 2;
-        let calBtn = document.getElementById("calBtn");
-        calBtn.addEventListener("click", () => {
-            console.log(display.value)
-            console.log(eval(display.value))
-            let calculate = eval(display.value);
-            display.value = calculate;
-            display.focus();
-        })
+        <div class="display">
+            <input id="display" type="text" placeholder="0">
+        </div>
 
-        let displayInput=(input)=>{
-            console.log(input)
-            display.value+=input;
-            display.focus();
-        }
+        <div class="row1">
+            <input class="operators" onclick="displayInput('%')" type="button" value="%">
+            <input class="allClear" onclick="allClear()" type="button" value="AC">
+            <input class="backSpace" onclick="backSpace()" type="button" value="⌫">
+            <input class="operators" onclick="displayInput('/')" type="button" value="/">
+        </div>
+        <div class="row2">
+            <input class="numericKeys" onclick="displayInput(7)" type="button" value="7">
+            <input class="numericKeys" onclick="displayInput(8)" type="button" value="8">
+            <input class="numericKeys" onclick="displayInput(9)" type="button" value="9">
+            <input class="operators" onclick="displayInput('*')" type="button" value="x">
+        </div>
+        <div class="row3">
+            <input class="numericKeys" onclick="displayInput(4)" type="button" value="4">
+            <input class="numericKeys" onclick="displayInput(5)" type="button" value="5">
+            <input class="numericKeys" onclick="displayInput(6)" type="button" value="6">
+            <input class="operators" onclick="displayInput('-')" type="button" value="-">
+        </div>
+        <div class="row4">
+            <input class="numericKeys" onclick="displayInput(1)" type="button" value="1">
+            <input class="numericKeys" onclick="displayInput(2)" type="button" value="2">
+            <input class="numericKeys" onclick="displayInput(3)" type="button" value="3">
+            <input class="operators" onclick="displayInput('+')" type="button" value="+">
+        </div>
+        <div class="row5">
+            <input class="operators" onclick="displayInput('.')" type="button" value=".">
+            <input class="numericKeys" onclick="displayInput(0)" type="button" value="0">
+            <button id="calBtn" type="button">=</button>
+        </div>
 
-        let allClear=()=>{
-            display.value='';
-        }
+    </div>
 
-        // for (const value of btn) {
-        //     // console.log(value)
-        //     // value.setAttribute("onclick",displayInput(value.value))
-        //     value.addEventListener("click",()=> displayInput(value.value))
-        //     // console.log(value)
-        // }
-
-        
-
-        function handleEvent(event) {
-            if (event.key === 'Enter' || event.keyCode === 13) {
-                calBtn.click()
-            }
-        }
-
-        document.addEventListener("keydown",handleEvent)
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
