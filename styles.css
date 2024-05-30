@@ -1,29 +1,73 @@
-body{
+body {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color:#EEEEEE;
+    /* margin: auto; */
+    height: 90vh;
+    background-color: #EEEEEE;
 }
-.mainContainer{
+
+.mainContainer {
     border: 1px solid;
     height: 100%;
-    width: 600px;
-    max-width:610px;
-    overflow: hidden;
+    /* width: 600px; */
+    max-width: 500px;
+    /* overflow: hidden; */
 }
-.display{
+
+.display {
     width: 100%;
-    padding:0 10px;
+    /* background-color: aqua; */
+    padding: 12px 20px 0 15px;
 }
-#display{
-    width: 100%;
+
+.display input {
     border: none;
     outline: none;
     /* background-color: transparent; */
-    height:40px;
+    height: 80px;
     font-size: xx-large;
     text-align: right;
-    padding-right: 160px;
+    padding: 0 5px;
+}
+
+/* .backSpace { */
+    /* margin-bottom: 100px; */
+    /* background-color: red; */
+/* } */
+
+input[type="button"] {
+    height: 100px;
+    width: 100px;
+    margin: 3px 0px;
+    font-size: x-large;
+}
+.row1{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+.row2{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+.row3{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+.row4{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+.row5{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+#calBtn{
+    width:215px;
 }
