@@ -4,44 +4,45 @@ body {
     align-items: center;
     justify-content: center;
     /* margin: auto; */
-    height: 90vh;
-    background-color: #EEEEEE;
+    height: 100vh;
+    background-color: #405D72;
 }
 
 .mainContainer {
     border: 1px solid;
-    height: 100%;
-    /* width: 600px; */
     max-width: 500px;
-    /* overflow: hidden; */
+    padding: 15px 3px;
+    background-color: #2F3645;
+    border-radius: 5px;
+    box-shadow: 19px 30px 75px 28px rgba(0,0,0,0.1);
 }
 
-.display {
-    width: 100%;
-    /* background-color: aqua; */
-    padding: 12px 20px 0 15px;
-}
+/* .display { */
+    /* padding: 12px 20px 0 15px; */
+/* } */
 
 .display input {
     border: none;
     outline: none;
-    /* background-color: transparent; */
+    width: 450px;
+    background-color: transparent;
     height: 80px;
     font-size: xx-large;
     text-align: right;
     padding: 0 5px;
+    margin:0 20px;
+    margin-bottom: 15px;
+    color:white;
 }
-
-/* .backSpace { */
-    /* margin-bottom: 100px; */
-    /* background-color: red; */
-/* } */
 
 input[type="button"] {
     height: 100px;
     width: 100px;
     margin: 3px 0px;
     font-size: x-large;
+    border-radius: 5px;
+    background-color: #F3F7EC;
+    box-shadow: 0px 0px 62px 68px rgba(0,0,0,0.1);
 }
 .row1{
     display: flex;
@@ -69,5 +70,5 @@ input[type="button"] {
     justify-content: space-evenly;
 }
 #calBtn{
-    width:215px;
+    width:220px;
 }

@@ -1,7 +1,8 @@
 let display = document.getElementById("display");
 let calBtn = document.getElementById("calBtn");
-let inputValues = /^[0-9+\-*/.,()]*$/;
-// let historyArray=[];
+let inputValues = /^[0-9+\-*/%.,()]*$/;
+
+
 calBtn.addEventListener("click", () => {
     if (inputValues.test(display.value)) {
         try {
